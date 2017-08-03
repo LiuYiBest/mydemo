@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mydemo">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="demo">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="hrdb"/>
+    <schema id="4" parent="1" name="information_schema"/>
+    <schema id="5" parent="1" name="mysql"/>
+    <schema id="6" parent="1" name="performance_schema"/>
+    <schema id="7" parent="1" name="work_attendance"/>
+    <schema id="8" parent="1" name="xiaoyuan"/>
+    <table id="9" parent="2" name="admin">
+      <Comment>`admin`</Comment>
+    </table>
+    <table id="10" parent="2" name="departments">
+      <Comment>`Departments`</Comment>
+    </table>
+    <table id="11" parent="2" name="employees">
+      <Comment>`employees`</Comment>
+    </table>
+    <table id="12" parent="2" name="jobs"/>
+    <table id="13" parent="2" name="photo">
+      <Comment>`photo`</Comment>
+    </table>
+    <table id="14" parent="2" name="roottb"/>
+    <table id="15" parent="2" name="subtb"/>
+    <column id="16" parent="9" name="admin_id">
+      <Position>1</Position>
+      <Comment>adminId</Comment>
+      <DataType>int(3)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="9" name="admin_name">
+      <Position>2</Position>
+      <Comment>adminName</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="18" parent="9" name="admin_pwd">
+      <Position>3</Position>
+      <Comment>adminPwd</Comment>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="19" parent="9" name="admin_level">
+      <Position>4</Position>
+      <Comment>adminLevel</Comment>
+      <DataType>int(1)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1&apos;</DefaultExpression>
+    </column>
+    <key id="20" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>admin_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="21" parent="10" name="department_id">
+      <Position>1</Position>
+      <Comment>deptId</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="22" parent="10" name="department_name">
+      <Position>2</Position>
+      <Comment>deptName</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="23" parent="10" name="location_name">
+      <Position>3</Position>
+      <Comment>loc</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="24" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>department_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="25" parent="11" name="employee_id">
+      <Position>1</Position>
+      <Comment>empId</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="11" name="employee_name">
+      <Position>2</Position>
+      <Comment>empName</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="27" parent="11" name="email">
+      <Position>3</Position>
+      <Comment>email</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="28" parent="11" name="phone_number">
+      <Position>4</Position>
+      <Comment>phoneNum</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="29" parent="11" name="hire_date">
+      <Position>5</Position>
+      <Comment>hireDate</Comment>
+      <DataType>datetime|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;1000-01-01 00:00:00&apos;</DefaultExpression>
+    </column>
+    <column id="30" parent="11" name="job_id">
+      <Position>6</Position>
+      <Comment>jobId</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="31" parent="11" name="department_id">
+      <Position>7</Position>
+      <Comment>depId</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1&apos;</DefaultExpression>
+    </column>
+    <column id="32" parent="11" name="salary">
+      <Position>8</Position>
+      <Comment>salary</Comment>
+      <DataType>double(16,4)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1.0000&apos;</DefaultExpression>
+    </column>
+    <key id="33" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>employee_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="12" name="jod_id">
+      <Position>1</Position>
+      <Comment>jodId</Comment>
+      <DataType>varchar(30)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="35" parent="12" name="job_title">
+      <Position>2</Position>
+      <Comment>jobTitle</Comment>
+      <DataType>varchar(35)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="12" name="min_salary">
+      <Position>3</Position>
+      <Comment>minSalary</Comment>
+      <DataType>int(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="12" name="max_salary">
+      <Position>4</Position>
+      <Comment>maxSalary</Comment>
+      <DataType>int(6)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="38" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>jod_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="39" parent="13" name="photo_id">
+      <Position>1</Position>
+      <Comment>photoId</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="40" parent="13" name="photo_path">
+      <Position>2</Position>
+      <Comment>photoPath</Comment>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="41" parent="13" name="employee_id">
+      <Position>3</Position>
+      <Comment>empId</Comment>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;-1&apos;</DefaultExpression>
+    </column>
+    <key id="42" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>photo_id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="43" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="44" parent="14" name="data">
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="45" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="15" name="id">
+      <Position>1</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="15" name="rootid">
+      <Position>2</Position>
+      <DataType>int(11) unsigned|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="48" parent="15" name="data">
+      <Position>3</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <index id="49" parent="15" name="rootid">
+      <ColNames>rootid</ColNames>
+    </index>
+    <key id="50" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="51" parent="15" name="subtb_ibfk_1">
+      <ColNames>rootid</ColNames>
+      <RefSchemaName>demo</RefSchemaName>
+      <RefTableName>roottb</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>

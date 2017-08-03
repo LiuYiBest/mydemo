@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liu.coder.mapper.PhotoMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.liu.coder.pojo.Photo">
+        <result column="photo_id" property="photoId"/>
+        <result column="photo_path" property="photoPath"/>
+        <result column="employee_id" property="empId"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `photo_id`,
+        `photo_path`,
+        `employee_id`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.photoId">
+        INSERT INTO photo (
+            `photo_id`,
+            `photo_path`,
+            `employee_id`
+        ) VALUES (
+            #{pojo.photoId},
+            #{pojo.photoPath},
+            #{pojo.empId}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.photoId">
+        INSERT INTO photo
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.photoId!=null"> `photo_id`,</if>
+            <if test="pojo.photoPath!=null"> `photo_path`,</if>
+            <if test="pojo.empId!=null"> `employee_id`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.photoId!=null">#{pojo.photoId},</if>
+            <if test="pojo.photoPath!=null">#{pojo.photoPath},</if>
+            <if test="pojo.empId!=null">#{pojo.empId},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO photo (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.photoId},
+            #{pojo.photoPath},
+            #{pojo.empId}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE photo
+        <set>
+            <if test="pojo.photoId != null"> `photo_id` = #{pojo.photoId}, </if>
+            <if test="pojo.photoPath != null"> `photo_path` = #{pojo.photoPath}, </if>
+            <if test="pojo.empId != null"> `employee_id` = #{pojo.empId} </if>
+        </set>
+        WHERE photo_id = #{pojo.photoId}
+    </update>
+</mapper>
+

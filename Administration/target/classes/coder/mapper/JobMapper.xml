@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liu.coder.mapper.JobMapper">
+    <!--auto generated Code-->
+    <resultMap id="AllColumnMap" type="com.liu.coder.pojo.Job">
+        <result column="jod_id" property="jodId"/>
+        <result column="job_title" property="jobTitle"/>
+        <result column="min_salary" property="minSalary"/>
+        <result column="max_salary" property="maxSalary"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="all_column">
+        `jod_id`,
+        `job_title`,
+        `min_salary`,
+        `max_salary`
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pojo.jodId">
+        INSERT INTO jobs (
+            `jod_id`,
+            `job_title`,
+            `min_salary`,
+            `max_salary`
+        ) VALUES (
+            #{pojo.jodId},
+            #{pojo.jobTitle},
+            #{pojo.minSalary},
+            #{pojo.maxSalary}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="pojo.jodId">
+        INSERT INTO jobs
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.jodId!=null"> `jod_id`,</if>
+            <if test="pojo.jobTitle!=null"> `job_title`,</if>
+            <if test="pojo.minSalary!=null"> `min_salary`,</if>
+            <if test="pojo.maxSalary!=null"> `max_salary`,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pojo.jodId!=null">#{pojo.jodId},</if>
+            <if test="pojo.jobTitle!=null">#{pojo.jobTitle},</if>
+            <if test="pojo.minSalary!=null">#{pojo.minSalary},</if>
+            <if test="pojo.maxSalary!=null">#{pojo.maxSalary},</if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO jobs (
+        <include refid="all_column"/>
+        )VALUES
+        <foreach collection="pojos" item="pojo" index="index" separator=",">
+            (
+            #{pojo.jodId},
+            #{pojo.jobTitle},
+            #{pojo.minSalary},
+            #{pojo.maxSalary}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="update">
+        UPDATE jobs
+        <set>
+            <if test="pojo.jodId != null"> `jod_id` = #{pojo.jodId}, </if>
+            <if test="pojo.jobTitle != null"> `job_title` = #{pojo.jobTitle}, </if>
+            <if test="pojo.minSalary != null"> `min_salary` = #{pojo.minSalary}, </if>
+            <if test="pojo.maxSalary != null"> `max_salary` = #{pojo.maxSalary} </if>
+        </set>
+        WHERE jod_id = #{pojo.jodId}
+    </update>
+</mapper>
+
